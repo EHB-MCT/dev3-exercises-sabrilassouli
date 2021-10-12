@@ -39,8 +39,37 @@ fun challengeTwo(){
     println("you have to pick either low(1-3) or high(4-6)")
     println(" to open the door, you only get 3 tries")
 
-    val userAnswer = readLine()
+    val userAnswer = readLine()?.toInt()
     val keypadPick = (1..6).random()
-    
+    // TODO: check == problems for strings
 
+    if (keypadPick>4){
+
+        if (userAnswer!! >4)
+            {
+                challengeThree()
+        }
+
+        else {
+            gameOver()
+        }
+    }
+    else{
+        if (userAnswer!! >4)
+        {
+            gameOver()
+        }
+
+        else {
+
+            challengeThree()
+        }
+
+    }
+
+
+}
+
+fun challengeThree(){
+    println("challenge three")
 }
