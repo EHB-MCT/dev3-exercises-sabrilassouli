@@ -30,5 +30,17 @@ fun challengeOne(){
 }
 
 fun challengeTwo(){
-println("challenge two")
+    println("you see a door leading into the building")
+    println("you don't know what is down there but it")
+    println("is better than freezing to death on a rooftop.")
+    println("you see a keypad on the door but it is weird")
+    println("instead of a normal keypad is a weird sort of")
+    println("coin flip like keypad.")
+    println("you have to pick either low(1-3) or high(4-6)")
+    println(" to open the door, you only get 3 tries")
+
+    val userAnswer = readLine()
+    val keypadPick = (1..6).random()
+    
+
 }
