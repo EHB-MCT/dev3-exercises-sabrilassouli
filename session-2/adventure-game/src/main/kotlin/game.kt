@@ -71,5 +71,50 @@ fun challengeTwo(){
 }
 
 fun challengeThree(){
-    println("challenge three")
+    println("You open the door end go down into the building")
+    println("you enter a hallway and hear someone talking")
+    println("you slowly sneak closer and see the woman talking on the phone")
+    println("'Yeah, i've got another one...yeah...yeah bloodtype Oneg ")
+    println("'yeah he's freezing to death on the roof, just have your guy")
+    println("at the morgue flag him, i have some contact on the")
+    println("black market, organ prices have risen recently")
+    println("we'll make a good million at least if all goes right'")
+    println(" ")
+    println(" ")
+    println("you realise you're going to have to fight your way out of this")
+    println("you go back in the hallway and open a supply closet")
+    println("you look for something to use as a weapon")
+    println("you see a broom, a crowbar and a toilet brush")
+    println("what do you pick?")
+
+
+    val answerOne = setOf<String>("broom")
+    val answerTwo = setOf<String>("crowbar")
+    val answerThree = setOf<String>("brush","toilet","toilet brush")
+    val userAnswer = readLine()
+    if (answerOne.contains(userAnswer)){
+        println("you attack her with a broom")
+        println("you fail to knock her out and she screams for help")
+        println("you run away and hide in the supply closet as you")
+        println("hear a man come and help her, they look for you")
+        println("luckily don't find you find you ")
+        challengeTwo()
+    }
+    else if(answerTwo.contains(userAnswer)){
+        println("you sneak in behind her and hit her on the head")
+        println("with the crowbar, you hear a crunch as you crack her skull.")
+        challengeFour()
+    }
+    else if(answerThree.contains(userAnswer)){
+
+        println("you seriously tried to kill someone with a toilet brush *_*")
+        println("what is wrong with you...")
+        gameOver()
+    }
+
+
+}
+
+fun challengeFour(){
+    println("challenge four")
 }
