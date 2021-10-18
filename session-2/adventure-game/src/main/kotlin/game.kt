@@ -139,10 +139,57 @@ fun challengeFour(){
 
 
     if (playerNumber == number){
-        challengeFive()
+        println("you found your car and get inside")
+        endBoss()
     }
 }
 
-fun challengeFive(){
-println("challenge five")
+fun endBoss(){
+    println("you drive out of the parking and go to the police")
+    println("you tell everything to the police and show them the")
+    print("notes you found in your car, the note reads:")
+    println("less ervil to basanites in chain wont")
+    println("this sentence makes no sense.")
+    println("maybe its an anagram?")
+
+    val userInput = readLine()
+
+    //fist guess
+    if(userInput == "sell liver to sebastian in china town"){
+        println("You did it! you cracked the code,")
+        println("thanks to your insight the police ")
+        println("was able to arrest the entire gang")
+        println("you can rest easy knowing they are in prison")
+    }else{
+        println("that lead didn't pan out, maybe try this other note?")
+        println("less earth to rasha in aerok wont")
+        val userInput2 = readLine()
+
+        //second guess
+        if(userInput2 == "sell heart to sarah in korea town"){
+            println("You did it! you cracked the code,")
+            println("thanks to your insight the police ")
+            println("was able to arrest the entire gang")
+            println("you can rest easy knowing they are in prison")
+        }
+        else{
+            println("that lead didn't pan out, maybe try this other note?")
+            println("less dinkeys to chameli in titlle bulind dictrist")
+            val userInput3 = readLine()
+
+            //Third guess
+            if(userInput3 == "sell kidneys to michael in little dublin district"){
+                println("You did it! you cracked the code,")
+                println("thanks to your insight the police ")
+                println("was able to arrest the entire gang")
+                println("you can rest easy knowing they are in prison")
+            }
+            else{
+                println("the police managed to arrest the traffickers that ")
+                println("tried to steal your organs, af few days later you ")
+                println("got murdered by their associates before you could testify")
+                gameOver()
+            }
+        }
+    }
 }
