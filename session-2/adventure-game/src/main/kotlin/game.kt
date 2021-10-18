@@ -10,8 +10,6 @@ fun main(){
 
 fun gameOver(){
     println("GAME OVER")
-    println("you failed to escape the building")
-    println("and died of exposure and starvation")
 }
 
 fun challengeOne(){
@@ -25,6 +23,9 @@ fun challengeOne(){
         challengeTwo()
     }
     else{
+
+        println("you failed to escape the building")
+        println("and died of exposure and starvation")
         gameOver()
     }
 }
@@ -41,7 +42,6 @@ fun challengeTwo(){
 
     val userAnswer = readLine()?.toInt()
     val keypadPick = (1..6).random()
-    // TODO: check == problems for strings
 
     if (keypadPick>4){
 
@@ -109,6 +109,8 @@ fun challengeThree(){
 
         println("you seriously tried to kill someone with a toilet brush *_*")
         println("what is wrong with you...")
+        println("she sticks you with a needle and you pass out again")
+        println("congratulations you died with a toilet brush stuck where your organs should be.")
         gameOver()
     }
 
@@ -186,8 +188,10 @@ fun endBoss(){
             }
             else{
                 println("the police managed to arrest the traffickers that ")
-                println("tried to steal your organs, af few days later you ")
+                println("tried to steal your organs, a few days later you ")
                 println("got murdered by their associates before you could testify")
+                println("the rest of them never got arrested and they keep")
+                println("kidnapping people and stealing their organs.")
                 gameOver()
             }
         }
