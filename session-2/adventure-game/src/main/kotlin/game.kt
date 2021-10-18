@@ -74,7 +74,7 @@ fun challengeThree(){
     println("You open the door end go down into the building")
     println("you enter a hallway and hear someone talking")
     println("you slowly sneak closer and see the woman talking on the phone")
-    println("'Yeah, i've got another one...yeah...yeah bloodtype Oneg ")
+    println("'Yeah, i've got another one...yeah...yeah blood-type O-neg ")
     println("'yeah he's freezing to death on the roof, just have your guy")
     println("at the morgue flag him, i have some contact on the")
     println("black market, organ prices have risen recently")
@@ -116,5 +116,33 @@ fun challengeThree(){
 }
 
 fun challengeFour(){
-    println("challenge four")
+
+    println("you search her body and find your car keys")
+    println("you take the stairs and reach the underground parking lot")
+    println("there are a hundred parking spots, which number is your car parked at?")
+
+
+    val number = (1..100).random()
+
+    var playerNumber = readLine()!!.toInt()
+
+    while (playerNumber != number){
+        if (playerNumber < number){
+            println("The number is higher than that")
+            playerNumber = readLine()!!.toInt()
+        } else if (playerNumber > number) {
+            println("The number is lower than that")
+            playerNumber = readLine()!!.toInt()
+        }
+    }
+
+
+
+    if (playerNumber == number){
+        challengeFive()
+    }
+}
+
+fun challengeFive(){
+println("challenge five")
 }
