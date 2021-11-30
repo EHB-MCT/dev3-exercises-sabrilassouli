@@ -1,37 +1,39 @@
 class Duolingo {
     @Suppress("SpellCheckingInspection")
     val words = mutableListOf<Word>(
-    Word("nain de jardin", "tuinkabouter",  "nederlands" ),
-    Word("ordinateur","computer","nederlands"),
-    Word("telephone","telefoon","nederlands"),
-    Word("oreillette","koptelefoon","nederlands"),
-    Word("oignon","ui","nederlands"),
-    Word("rabbit","konijn","nederlands"),
-    Word("bullet","kogel","nederlands"),
-    Word("community","gemeenschap","nederlands"),
-    Word("wood","hout","nederlands"),
-    Word("layer","laag","nederlands"),
-
-
-
+    Word("nain de jardin", "tuinkabouter",  "français" ),
+    Word("ordinateur","computer","français"),
+    Word("telephone","telefoon","français"),
+    Word("oreillette","koptelefoon","français"),
+    Word("oignon","ui","français"),
+    Word("rabbit","konijn","english"),
+    Word("bullet","kogel","english"),
+    Word("community","gemeenschap","english"),
+    Word("wood","hout","english"),
+    Word("layer","laag","english")
     )
 
 fun play() {
 
-    for (i in 1..5){
-    val randomWord = words.random()
-    println(randomWord.original)
-    val correctAnswers = randomWord.translated
-    val userAnswer = readLine()
-    if (correctAnswers == userAnswer){
-        println("that's correct, good job")
-    }
-    else{
+    val currentWords = words.shuffled().take(5).toMutableSet()
 
-        println("too bad the correct answer was")
-        print(randomWord.original)
+    while (currentWords.count() > 0){
+    //while (currentWords.isNotEmpty()){ works too
+        println(currentWords.count())
 
+        val selectedWord = currentWords.random()
+        println("whats the translation of ${selectedWord.original}")
+        val userAnswer = readLine()
+        if (selectedWord.translated == userAnswer){
+            println("that's correct, good job")
+            currentWords.remove(selectedWord)
+        }
+        else{
+
+            print("too bad the correct answer was")
+            println(selectedWord.translated)
+
+        }
     }
-}
 }
 }
