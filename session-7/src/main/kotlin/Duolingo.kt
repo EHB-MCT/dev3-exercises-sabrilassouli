@@ -17,6 +17,21 @@ class Duolingo {
     )
 
 fun play() {
-    words.random()
+
+    for (i in 1..5){
+    val randomWord = words.random()
+    println(randomWord.original)
+    val correctAnswers = randomWord.translated
+    val userAnswer = readLine()
+    if (correctAnswers == userAnswer){
+        println("that's correct, good job")
+    }
+    else{
+
+        println("too bad the correct answer was")
+        print(randomWord.original)
+
+    }
+}
 }
 }
