@@ -1,22 +1,26 @@
-class Duolingo {
+class Duolingo(var numberOfRounds:String = "5", val language:String = "english") {
     @Suppress("SpellCheckingInspection")
-    val words = mutableListOf<Word>(
-    Word("nain de jardin", "tuinkabouter",  "français" ),
-    Word("ordinateur","computer","français"),
-    Word("telephone","telefoon","français"),
-    Word("oreillette","koptelefoon","français"),
-    Word("oignon","ui","français"),
-    Word("rabbit","konijn","english"),
-    Word("bullet","kogel","english"),
-    Word("community","gemeenschap","english"),
-    Word("wood","hout","english"),
-    Word("layer","laag","english")
+    var words = mutableListOf<Word>(
+    FrenchWords("nain de jardin", "tuinkabouter"),
+    FrenchWords("ordinateur","computer"),
+    FrenchWords("telephone","telefoon"),
+    FrenchWords("oreillette","koptelefoon"),
+    FrenchWords("oignon","ui"),
+    EnglishWords("rabbit","konijn"),
+    EnglishWords("bullet","kogel"),
+    EnglishWords("community","gemeenschap"),
+    EnglishWords("wood","hout"),
+    EnglishWords("layer","laag")
     )
-
+init {
+    words = words.filter { it.language == language }.toMutableList()
+}
 fun play() {
 
-    val currentWords = words.shuffled().take(5).toMutableSet()
-
+    println("welcome to duolingo!")
+    println("how many rounds would you like to play")
+    numberOfRounds = readLine().toString()
+    val currentWords = words.shuffled().take(numberOfRounds.toInt()).toMutableSet()
     while (currentWords.count() > 0){
     //while (currentWords.isNotEmpty()){ works too
         println(currentWords.count())
