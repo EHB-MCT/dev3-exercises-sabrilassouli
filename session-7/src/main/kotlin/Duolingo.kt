@@ -1,4 +1,4 @@
-class Duolingo(var numberOfRounds:String = "5", val language:String = "english") {
+class Duolingo(var numberOfRounds:Int    = 5, val language:String = "english", var level:String = "easy") {
     @Suppress("SpellCheckingInspection")
     var words = mutableListOf<Word>(
     FrenchWords("nain de jardin", "tuinkabouter"),
@@ -14,30 +14,48 @@ class Duolingo(var numberOfRounds:String = "5", val language:String = "english")
     )
 init {
     words = words.filter { it.language == language }.toMutableList()
+
+
 }
-fun play() {
+    fun play() {
 
     println("welcome to duolingo!")
-    println("how many rounds would you like to play")
-    numberOfRounds = readLine().toString()
-    val currentWords = words.shuffled().take(numberOfRounds.toInt()).toMutableSet()
-    while (currentWords.count() > 0){
-    //while (currentWords.isNotEmpty()){ works too
-        println(currentWords.count())
+    println("chose a level: easy or hard")
+    var levelChoice = readLine()
+    if (levelChoice == "easy")
+    {
+        easy()
+    }
+    else if (levelChoice == "hard"){
+        hard()
+    }
 
-        val selectedWord = currentWords.random()
-        println("whats the translation of ${selectedWord.original}")
-        val userAnswer = readLine()
-        if (selectedWord.translated == userAnswer){
-            println("that's correct, good job")
-            currentWords.remove(selectedWord)
-        }
-        else{
+}
+    fun easy(){
+    numberOfRounds = 3
+        val currentWords = words.shuffled().take(numberOfRounds).toMutableSet()
+        while (currentWords.count() > 0){
+            //while (currentWords.isNotEmpty()){ works too
+            println(currentWords.count())
 
-            print("too bad the correct answer was")
-            println(selectedWord.translated)
+            val selectedWord = currentWords.random()
+            println("whats the translation of ${selectedWord.original}")
+            val userAnswer = readLine()
+            if (selectedWord.translated == userAnswer){
+                println("that's correct, good job")
+                currentWords.remove(selectedWord)
+            }
+            else{
 
+                print("too bad the correct answer was")
+                println(selectedWord.translated)
+
+            }
         }
     }
-}
+    fun hard(){
+
+    }
+
+
 }
